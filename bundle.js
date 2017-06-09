@@ -20126,6 +20126,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _project_actions = __webpack_require__(48);
 
+var _image_search_gif_actions = __webpack_require__(341);
+
 var _merge = __webpack_require__(101);
 
 var _merge2 = _interopRequireDefault(_merge);
@@ -20139,6 +20141,8 @@ var GifsReducer = function GifsReducer() {
   Object.freeze(state);
   switch (action.type) {
     case _project_actions.RECEIVE_GIF:
+      return action.gif;
+    case _image_search_gif_actions.RECEIVE_SEARCH_GIF:
       return action.gif;
     default:
       return state;
@@ -35336,6 +35340,58 @@ var valueEqual = function valueEqual(a, b) {
 };
 
 exports.default = valueEqual;
+
+/***/ }),
+/* 341 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.fetchSearchGif = exports.receiveSearchGif = exports.RECEIVE_SEARCH_GIF = undefined;
+
+var _image_gif_api_util = __webpack_require__(342);
+
+var ImageGifAPIUtil = _interopRequireWildcard(_image_gif_api_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var RECEIVE_SEARCH_GIF = exports.RECEIVE_SEARCH_GIF = 'RECEIVE_SEARCH_GIF';
+
+var receiveSearchGif = exports.receiveSearchGif = function receiveSearchGif(gif) {
+  return {
+    type: RECEIVE_SEARCH_GIF,
+    gif: gif
+  };
+};
+
+var fetchSearchGif = exports.fetchSearchGif = function fetchSearchGif(searchTerm) {
+  return function (dispatch) {
+    return ImageGifAPIUtil.searchGif(searchTerm).then(function (gif) {
+      return dispatch(receiveSearchGif(gif));
+    });
+  };
+};
+
+/***/ }),
+/* 342 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var searchGif = exports.searchGif = function searchGif(searchTerm) {
+  return $.ajax({
+    method: 'GET',
+    url: 'http://api.giphy.com/v1/stickers/search?q=' + searchTerm + '&api_key=dc6zaTOxFJmzC'
+  });
+};
 
 /***/ })
 /******/ ]);
