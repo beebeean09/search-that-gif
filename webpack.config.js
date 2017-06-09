@@ -25,7 +25,7 @@ module.exports = {
   context: __dirname,
   entry: './app.js',
   output: {
-    path: path.resolve(__dirname),
+    path: path.join(__dirname, 'assets'),
     filename: 'bundle.js'
   },
   resolve: {

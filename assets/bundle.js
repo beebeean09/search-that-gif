@@ -19885,7 +19885,7 @@ var _reactRedux = __webpack_require__(59);
 
 var _reactRouterDom = __webpack_require__(258);
 
-var _main = __webpack_require__(155);
+var _main = __webpack_require__(156);
 
 var _main2 = _interopRequireDefault(_main);
 
@@ -19985,11 +19985,307 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /***/ }),
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
+/* 151 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DisplaySearchGif = function (_React$Component) {
+  _inherits(DisplaySearchGif, _React$Component);
+
+  function DisplaySearchGif(props) {
+    _classCallCheck(this, DisplaySearchGif);
+
+    return _possibleConstructorReturn(this, (DisplaySearchGif.__proto__ || Object.getPrototypeOf(DisplaySearchGif)).call(this, props));
+  }
+
+  _createClass(DisplaySearchGif, [{
+    key: 'render',
+    value: function render() {
+      var searchGifs = void 0;
+      var searchGifOne = void 0;
+      if (this.props.searchGif.data) {
+        // searchGifs = this.props.searchGif.data.map((el, idx) => (
+        //   <li key={idx}>
+        //     <img src={el.images.original.url} width='100' height='100'/>
+        //   </li>
+        // ));
+        searchGifs = this.props.searchGif.data[0];
+        searchGifOne = _react2.default.createElement(
+          'div',
+          null,
+          'Hello here are the gifs.',
+          _react2.default.createElement(
+            'ul',
+            null,
+            _react2.default.createElement('img', {
+              src: searchGifs.images.original.url,
+              width: '100',
+              height: '100' })
+          )
+        );
+      }
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        searchGifOne
+      );
+    }
+  }]);
+
+  return DisplaySearchGif;
+}(_react2.default.Component);
+
+exports.default = DisplaySearchGif;
+
+/***/ }),
+/* 152 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Gif = function (_React$Component) {
+  _inherits(Gif, _React$Component);
+
+  function Gif(props) {
+    _classCallCheck(this, Gif);
+
+    return _possibleConstructorReturn(this, (Gif.__proto__ || Object.getPrototypeOf(Gif)).call(this, props));
+  }
+
+  _createClass(Gif, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.props.updateGif();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var source = '';
+      if (this.props.gif.data) {
+        source = this.props.gif.data.image_url;
+      }
+      var gif = _react2.default.createElement('img', { className: 'gif', src: source });
+      return _react2.default.createElement(
+        'section',
+        { className: 'gif-container' },
+        gif
+      );
+    }
+  }]);
+
+  return Gif;
+}(_react2.default.Component);
+
+exports.default = Gif;
+
+/***/ }),
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _gif = __webpack_require__(152);
+
+var _gif2 = _interopRequireDefault(_gif);
+
+var _reactRedux = __webpack_require__(59);
+
+var _project_actions = __webpack_require__(48);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    gif: state.gif,
+    state: state
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    updateGif: function updateGif() {
+      return dispatch((0, _project_actions.scrapeGif)());
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_gif2.default);
+
+/***/ }),
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _display_search_gif = __webpack_require__(151);
+
+var _display_search_gif2 = _interopRequireDefault(_display_search_gif);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SearchGifForm = function (_React$Component) {
+  _inherits(SearchGifForm, _React$Component);
+
+  function SearchGifForm(props) {
+    _classCallCheck(this, SearchGifForm);
+
+    var _this = _possibleConstructorReturn(this, (SearchGifForm.__proto__ || Object.getPrototypeOf(SearchGifForm)).call(this, props));
+
+    _this.state = {
+      searchTerm: ""
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    _this.handleInput = _this.handleInput.bind(_this);
+    return _this;
+  }
+
+  _createClass(SearchGifForm, [{
+    key: 'handleInput',
+    value: function handleInput(event) {
+      this.setState({ searchTerm: event.currentTarget.value });
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit() {
+      var parsedTerm = this.state.searchTerm.split(' ').join('+');
+      this.props.fetchSearchGif(parsedTerm);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var searchGif = this.props.searchGif;
+      var fetchSearchGif = this.props.fetchSearchGif;
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'label',
+          null,
+          'Search for a Gif Here:',
+          _react2.default.createElement('input', {
+            type: 'text',
+            value: this.state.searchTerm,
+            onChange: this.handleInput,
+            placeholder: 'Enter a term to search' })
+        ),
+        _react2.default.createElement('input', {
+          type: 'button',
+          value: 'Search',
+          onClick: this.handleSubmit }),
+        _react2.default.createElement(_display_search_gif2.default, {
+          searchGif: searchGif })
+      );
+    }
+  }]);
+
+  return SearchGifForm;
+}(_react2.default.Component);
+
+exports.default = SearchGifForm;
+
+/***/ }),
 /* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(59);
+
+var _gif_search_form = __webpack_require__(154);
+
+var _gif_search_form2 = _interopRequireDefault(_gif_search_form);
+
+var _image_search_gif_actions = __webpack_require__(84);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    state: state,
+    searchGif: state.searchGif
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchSearchGif: function fetchSearchGif(searchTerm) {
+      return dispatch((0, _image_search_gif_actions.fetchSearchGif)(searchTerm));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_gif_search_form2.default);
+
+/***/ }),
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20003,11 +20299,11 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _gif_container = __webpack_require__(352);
+var _gif_container = __webpack_require__(153);
 
 var _gif_container2 = _interopRequireDefault(_gif_container);
 
-var _gif_search_form_container = __webpack_require__(350);
+var _gif_search_form_container = __webpack_require__(155);
 
 var _gif_search_form_container2 = _interopRequireDefault(_gif_search_form_container);
 
@@ -20027,7 +20323,6 @@ var Main = function Main(_ref) {
 exports.default = Main;
 
 /***/ }),
-/* 156 */,
 /* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -35348,307 +35643,6 @@ var valueEqual = function valueEqual(a, b) {
 };
 
 exports.default = valueEqual;
-
-/***/ }),
-/* 347 */,
-/* 348 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var DisplaySearchGif = function (_React$Component) {
-  _inherits(DisplaySearchGif, _React$Component);
-
-  function DisplaySearchGif(props) {
-    _classCallCheck(this, DisplaySearchGif);
-
-    return _possibleConstructorReturn(this, (DisplaySearchGif.__proto__ || Object.getPrototypeOf(DisplaySearchGif)).call(this, props));
-  }
-
-  _createClass(DisplaySearchGif, [{
-    key: 'render',
-    value: function render() {
-      var searchGifs = void 0;
-      var searchGifOne = void 0;
-      if (this.props.searchGif.data) {
-        // searchGifs = this.props.searchGif.data.map((el, idx) => (
-        //   <li key={idx}>
-        //     <img src={el.images.original.url} width='100' height='100'/>
-        //   </li>
-        // ));
-        searchGifs = this.props.searchGif.data[0];
-        searchGifOne = _react2.default.createElement(
-          'div',
-          null,
-          'Hello here are the gifs.',
-          _react2.default.createElement(
-            'ul',
-            null,
-            _react2.default.createElement('img', {
-              src: searchGifs.images.original.url,
-              width: '100',
-              height: '100' })
-          )
-        );
-      }
-
-      return _react2.default.createElement(
-        'div',
-        null,
-        searchGifOne
-      );
-    }
-  }]);
-
-  return DisplaySearchGif;
-}(_react2.default.Component);
-
-exports.default = DisplaySearchGif;
-
-/***/ }),
-/* 349 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _display_search_gif = __webpack_require__(348);
-
-var _display_search_gif2 = _interopRequireDefault(_display_search_gif);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var SearchGifForm = function (_React$Component) {
-  _inherits(SearchGifForm, _React$Component);
-
-  function SearchGifForm(props) {
-    _classCallCheck(this, SearchGifForm);
-
-    var _this = _possibleConstructorReturn(this, (SearchGifForm.__proto__ || Object.getPrototypeOf(SearchGifForm)).call(this, props));
-
-    _this.state = {
-      searchTerm: ""
-    };
-    _this.handleSubmit = _this.handleSubmit.bind(_this);
-    _this.handleInput = _this.handleInput.bind(_this);
-    return _this;
-  }
-
-  _createClass(SearchGifForm, [{
-    key: 'handleInput',
-    value: function handleInput(event) {
-      this.setState({ searchTerm: event.currentTarget.value });
-    }
-  }, {
-    key: 'handleSubmit',
-    value: function handleSubmit() {
-      var parsedTerm = this.state.searchTerm.split(' ').join('+');
-      this.props.fetchSearchGif(parsedTerm);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var searchGif = this.props.searchGif;
-      var fetchSearchGif = this.props.fetchSearchGif;
-
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'label',
-          null,
-          'Search for a Gif Here:',
-          _react2.default.createElement('input', {
-            type: 'text',
-            value: this.state.searchTerm,
-            onChange: this.handleInput,
-            placeholder: 'Enter a term to search' })
-        ),
-        _react2.default.createElement('input', {
-          type: 'button',
-          value: 'Search',
-          onClick: this.handleSubmit }),
-        _react2.default.createElement(_display_search_gif2.default, {
-          searchGif: searchGif })
-      );
-    }
-  }]);
-
-  return SearchGifForm;
-}(_react2.default.Component);
-
-exports.default = SearchGifForm;
-
-/***/ }),
-/* 350 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _reactRedux = __webpack_require__(59);
-
-var _gif_search_form = __webpack_require__(349);
-
-var _gif_search_form2 = _interopRequireDefault(_gif_search_form);
-
-var _image_search_gif_actions = __webpack_require__(84);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    state: state,
-    searchGif: state.searchGif
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    fetchSearchGif: function fetchSearchGif(searchTerm) {
-      return dispatch((0, _image_search_gif_actions.fetchSearchGif)(searchTerm));
-    }
-  };
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_gif_search_form2.default);
-
-/***/ }),
-/* 351 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Gif = function (_React$Component) {
-  _inherits(Gif, _React$Component);
-
-  function Gif(props) {
-    _classCallCheck(this, Gif);
-
-    return _possibleConstructorReturn(this, (Gif.__proto__ || Object.getPrototypeOf(Gif)).call(this, props));
-  }
-
-  _createClass(Gif, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.props.updateGif();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var source = '';
-      if (this.props.gif.data) {
-        source = this.props.gif.data.image_url;
-      }
-      var gif = _react2.default.createElement('img', { className: 'gif', src: source });
-      return _react2.default.createElement(
-        'section',
-        { className: 'gif-container' },
-        gif
-      );
-    }
-  }]);
-
-  return Gif;
-}(_react2.default.Component);
-
-exports.default = Gif;
-
-/***/ }),
-/* 352 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _gif = __webpack_require__(351);
-
-var _gif2 = _interopRequireDefault(_gif);
-
-var _reactRedux = __webpack_require__(59);
-
-var _project_actions = __webpack_require__(48);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    gif: state.gif,
-    state: state
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    updateGif: function updateGif() {
-      return dispatch((0, _project_actions.scrapeGif)());
-    }
-  };
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_gif2.default);
 
 /***/ })
 /******/ ]);
