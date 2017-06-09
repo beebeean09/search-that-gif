@@ -1,3 +1,5 @@
+import $ from '@rtorr/ajax-only';
+
 export const searchGif = (searchTerm) => {
   return $.ajax({
     method: 'GET',

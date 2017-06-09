@@ -8,5 +8,5 @@ export const receiveSearchGif = (gif) => ({
 
 export const fetchSearchGif = (searchTerm) => dispatch => (
   ImageGifAPIUtil.searchGif(searchTerm)
-    .then((gif) => (dispatch(receiveSearchGif(gif))))
+    .then(gif => dispatch(receiveSearchGif(gif)))
 );
