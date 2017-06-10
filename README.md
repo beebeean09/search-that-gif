@@ -1,7 +1,7 @@
 # Search That Gif
 
-A place where users can search for gifs according to their input. It uses React, Redux, and GiphySearch API to search for gifs
-according to the search term given.
+A place where users can search for gifs according to their input. It uses React, Redux, and Giphy API to fetch gifs
+according to the search term provided.
 
 ![image of gif search](assets/images/search-gif.gif)
 
