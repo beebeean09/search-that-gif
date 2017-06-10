@@ -1,9 +1,41 @@
 body {
   height: 100%;
   width: 100%;
-  background: pink;
+  background: #b2bfc3;
+  font-family: sans-serif;
 }
 
 .gif-container {
-  background: lightblue;
+  padding: 30px;
+}
+
+.gif-container > h1 {
+  font-size: 70px;
+  color: white;
+  text-align: center;
+}
+.search-gifs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gif-search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gif-input > input {
+  padding: 10px 15px;
+  margin: 16px 0;
+}
+
+.button {
+  border: 1px solid white;
+  background: lightgrey;
+  padding: 10px 15px;
+  cursor: pointer;
 }

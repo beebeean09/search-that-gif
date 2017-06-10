@@ -10,27 +10,29 @@ class DisplaySearchGif extends React.Component {
     let searchGifs;
     let searchGifOne;
     if (this.props.searchGif.data) {
-      // searchGifs = this.props.searchGif.data.map((el, idx) => (
-      //   <li key={idx}>
-      //     <img src={el.images.original.url} width='100' height='100'/>
-      //   </li>
-      // ));
-      searchGifs = this.props.searchGif.data[0];
-      searchGifOne =
-      <div>
-        Hello here are the gifs.
-        <ul>
-          <img
-            src={searchGifs.images.original.url}
-            width='100'
-            height='100'/>
+      // searchGifs = this.props.searchGif.data.slice(0,6);
+      searchGifs = this.props.searchGif.data;
+      searchGifs = searchGifs.map((el, idx) => (
+        <ul key={idx}>
+          <img src={el.images.original.url} width='100' height='100'/>
         </ul>
-      </div>;
+      ));
+      // searchGifOne =
+      // <div>
+      //   Hello here are the gifs.
+      //   <ul>
+      //     <img
+      //       src={searchGifs.images.original.url}
+      //       width='100'
+      //       height='100'/>
+      //   </ul>
+      // </div>;
     }
 
+    // {searchGifOne}
     return(
-      <div>
-        {searchGifOne}
+      <div className="search-gifs">
+        {searchGifs}
       </div>
     );
   }

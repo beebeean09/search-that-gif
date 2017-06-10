@@ -26,20 +26,26 @@ class SearchGifForm extends React.Component {
     const fetchSearchGif = this.props.fetchSearchGif;
 
     return(
-      <div>
-        <label>Search for a Gif Here:
-          <input
-            type="text"
-            value={this.state.searchTerm}
-            onChange={this.handleInput}
-            placeholder="Enter a term to search"></input>
-        </label>
-        <input
-          type="button"
-          value="Search"
-          onClick={this.handleSubmit}></input>
-        <DisplaySearchGif
-          searchGif={searchGif}/>
+      <div className="gif-container">
+        <h1>Search That Gif!</h1>
+        <div className="gif-search-form">
+          <div className="gif-input">
+            <input
+              type="text"
+              value={this.state.searchTerm}
+              onChange={this.handleInput}
+              placeholder="Enter a term to search"></input>
+          </div>
+          <div className="button-container">
+            <input
+              className="button"
+              type="button"
+              value="Search"
+              onClick={this.handleSubmit}></input>
+          </div>
+          <DisplaySearchGif
+            searchGif={searchGif}/>
+        </div>
       </div>
     );
   }

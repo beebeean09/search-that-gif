@@ -20024,31 +20024,32 @@ var DisplaySearchGif = function (_React$Component) {
       var searchGifs = void 0;
       var searchGifOne = void 0;
       if (this.props.searchGif.data) {
-        // searchGifs = this.props.searchGif.data.map((el, idx) => (
-        //   <li key={idx}>
-        //     <img src={el.images.original.url} width='100' height='100'/>
-        //   </li>
-        // ));
-        searchGifs = this.props.searchGif.data[0];
-        searchGifOne = _react2.default.createElement(
-          'div',
-          null,
-          'Hello here are the gifs.',
-          _react2.default.createElement(
+        // searchGifs = this.props.searchGif.data.slice(0,6);
+        searchGifs = this.props.searchGif.data;
+        searchGifs = searchGifs.map(function (el, idx) {
+          return _react2.default.createElement(
             'ul',
-            null,
-            _react2.default.createElement('img', {
-              src: searchGifs.images.original.url,
-              width: '100',
-              height: '100' })
-          )
-        );
+            { key: idx },
+            _react2.default.createElement('img', { src: el.images.original.url, width: '100', height: '100' })
+          );
+        });
+        // searchGifOne =
+        // <div>
+        //   Hello here are the gifs.
+        //   <ul>
+        //     <img
+        //       src={searchGifs.images.original.url}
+        //       width='100'
+        //       height='100'/>
+        //   </ul>
+        // </div>;
       }
 
+      // {searchGifOne}
       return _react2.default.createElement(
         'div',
-        null,
-        searchGifOne
+        { className: 'search-gifs' },
+        searchGifs
       );
     }
   }]);
@@ -20105,11 +20106,10 @@ var Gif = function (_React$Component) {
         source = this.props.gif.data.image_url;
       }
       var gif = _react2.default.createElement('img', { className: 'gif', src: source });
-      return _react2.default.createElement(
-        'section',
-        { className: 'gif-container' },
-        gif
-      );
+      // <section className="gif-container">
+      //   { gif }
+      // </section>
+      return _react2.default.createElement('div', null);
     }
   }]);
 
@@ -20220,23 +20220,36 @@ var SearchGifForm = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'gif-container' },
         _react2.default.createElement(
-          'label',
+          'h1',
           null,
-          'Search for a Gif Here:',
-          _react2.default.createElement('input', {
-            type: 'text',
-            value: this.state.searchTerm,
-            onChange: this.handleInput,
-            placeholder: 'Enter a term to search' })
+          'Search That Gif!'
         ),
-        _react2.default.createElement('input', {
-          type: 'button',
-          value: 'Search',
-          onClick: this.handleSubmit }),
-        _react2.default.createElement(_display_search_gif2.default, {
-          searchGif: searchGif })
+        _react2.default.createElement(
+          'div',
+          { className: 'gif-search-form' },
+          _react2.default.createElement(
+            'div',
+            { className: 'gif-input' },
+            _react2.default.createElement('input', {
+              type: 'text',
+              value: this.state.searchTerm,
+              onChange: this.handleInput,
+              placeholder: 'Enter a term to search' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'button-container' },
+            _react2.default.createElement('input', {
+              className: 'button',
+              type: 'button',
+              value: 'Search',
+              onClick: this.handleSubmit })
+          ),
+          _react2.default.createElement(_display_search_gif2.default, {
+            searchGif: searchGif })
+        )
       );
     }
   }]);
